@@ -41,6 +41,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :virtualbox do |vb, override|
   end
 
+  config.vm.provision "shell", inline: "apt-get update"
+
   config.vm.provision "docker"
 
   # kick off the tests automatically
